@@ -51,8 +51,7 @@ const AllToy = () => {
                                 <td>{item.quantity}</td>
         
                                 <th>
-                                <Link to={`/toy/${item.toy_id
-}`}>
+                                <Link to={`/toy/${item.toy_id}`}>
                                     <button className="btn btn-ghost btn-xs">details</button>
                                 </Link>
                                 </th>
