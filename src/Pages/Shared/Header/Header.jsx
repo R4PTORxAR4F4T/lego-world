@@ -37,14 +37,21 @@ return (
               </label>            
             </>:
             <>
-              {/* <FaUserCircle className='profile-icon' style={{height:'3rem'}} title=""></FaUserCircle> */}
+              
             </>}
 
             <Link className='hover:text-cyan-500 hover:font-medium'  to="/">Home</Link>
             <Link className='hover:text-cyan-500 hover:font-medium'  to="/blogs">Blogs</Link>
             <Link className='hover:text-cyan-500 hover:font-medium'  to="/alltoy">All Toy</Link>
-            <Link className='hover:text-cyan-500 hover:font-medium'  to="/addtoy">Add Toy</Link>
-            <Link className='hover:text-cyan-500 hover:font-medium'  to="/mytoy">My Toy</Link>
+
+            {user ? 
+            <>
+              <Link className='hover:text-cyan-500 hover:font-medium'  to="/addtoy">Add Toy</Link>
+              <Link className='hover:text-cyan-500 hover:font-medium'  to="/mytoy">My Toy</Link>
+            </>
+            :
+            <>              
+            </>}
 
             {user ? 
             <>

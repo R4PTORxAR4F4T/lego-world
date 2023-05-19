@@ -35,7 +35,7 @@ const ToyDetails = () => {
         .then(data => {
             console.log(data);
             if(data.insertedId){
-                alert('service book successfully')
+                alert('Added to card successfully')
             }
         })
 
