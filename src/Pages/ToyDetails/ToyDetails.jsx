@@ -13,6 +13,7 @@ const ToyDetails = () => {
     
         const email = user?.email;
         const booking = { 
+            toy_id:_id,
             email:email,
             seller: seller_name, 
             toy_name:name,
