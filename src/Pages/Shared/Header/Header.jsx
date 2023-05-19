@@ -16,9 +16,9 @@ const Header = () => {
     const { logOut, user } = useContext(AuthContext);
 
 return (
-    <div className="navbar bg-base-100 w-4/6 mx-auto">
+    <div className="navbar bg-base-100 w-4/6 mx-auto mb-5">
         <div className="navbar-start">
-        <a className="btn btn-ghost normal-case text-xl">Lego World</a>
+        <a className="btn btn-ghost normal-case text-3xl">Lego World</a>
         </div>
 
         <div className="navbar-end">

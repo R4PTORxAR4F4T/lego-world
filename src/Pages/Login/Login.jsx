@@ -52,11 +52,11 @@ const Login = () => {
             <h2 className='text-2xl'>Login</h2>
             <form onSubmit={handleLogin}>
                 <div className="user-box">
-                    <input type="text" name="" required=""/>
-                    <label>Username</label>
+                    <input type="email" name='email' required/>
+                    <label>Email</label>
                 </div>
                 <div className="user-box">
-                    <input type="password" name="" required=""/>
+                    <input type="password" name='password' required/>
                     <label>Password</label>
                 </div>
 

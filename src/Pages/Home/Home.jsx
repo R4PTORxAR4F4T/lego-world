@@ -1,11 +1,19 @@
-import React from 'react';
+import React ,{ useEffect, useState }from 'react';
 import Carasol from '../Shared/Carasol/Carasol';
+import AllToy from '../AllToy/AllToy';
+import ToyCategory from '../ToyCategory/ToyCategory';
+
 
 const Home = () => {
+
+    
+
+    // console.log(alltoys);
+
     return (
         <div className='w-4/6 mx-auto'>
             <Carasol></Carasol>
-            <h1>this is home</h1>
+            <ToyCategory></ToyCategory>
         </div>
     );
 };
