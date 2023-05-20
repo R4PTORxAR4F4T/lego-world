@@ -5,6 +5,8 @@ import ToyCategory from '../ToyCategory/ToyCategory';
 import Gallery from '../Shared/Gallery/Gallery';
 import Comming from '../Shared/Comming/Comming';
 import About from '../Shared/About/About';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 
 const Home = () => {
@@ -15,11 +17,13 @@ const Home = () => {
 
     return (
         <div className='w-4/6 mx-auto'>
+            <Header></Header>
             <Carasol></Carasol>
             <Gallery></Gallery>
             <ToyCategory></ToyCategory>
             <Comming></Comming>
             <About></About>
+            <Footer></Footer>
         </div>
     );
 };

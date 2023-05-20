@@ -1,4 +1,4 @@
-import { Link,NavLink,useLocation } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
 import {AuthContext} from '../../../providers/AuthProvider';
 import React,{ useEffect, useState, useContext} from 'react';
 
@@ -16,7 +16,7 @@ const Header = () => {
     const { logOut, user } = useContext(AuthContext);
 
 return (
-    <div className="navbar bg-base-100 w-4/6 mx-auto mb-5">
+    <div className="navbar bg-base-100 mb-5">
         <div className="navbar-start">
         <a className="btn btn-ghost normal-case text-3xl"><img className='w-12' src="/public/gamepad.png" /> Lego World</a>
         </div>

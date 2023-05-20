@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
+import Header from "../Shared/Header/Header";
+import Footer from "../Shared/Footer/Footer";
 
 
 const AllToy = () => {
@@ -17,6 +19,8 @@ const AllToy = () => {
 
     return (
         <div className="w-4/6 mx-auto">
+            <Header></Header>
+            <div >
             <p className='text-4xl text-center mb-8 border-b pb-4 border-white '>All toys</p>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
@@ -58,9 +62,11 @@ const AllToy = () => {
                             </tr> 
                         ))}
                     </tbody>
-
+                    
                 </table>
             </div>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };

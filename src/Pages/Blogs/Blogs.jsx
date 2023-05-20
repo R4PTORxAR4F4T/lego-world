@@ -1,8 +1,12 @@
 import React from 'react';
+import Header from '../Shared/Header/Header';
+import Footer from '../Shared/Footer/Footer';
 
 const Blogs = () => {
     return (
-        <div className="w-4/6 mx-auto p-4 my-2">
+        <div className='w-4/6 mx-auto'>
+          <Header></Header>
+          <div className="p-4 my-2">
             <p className='text-4xl text-center mb-8 border-b pb-4 border-white '>Blogs</p>
 
             <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-5">
@@ -61,6 +65,8 @@ const Blogs = () => {
                 <p className='mb-3'>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.</p>
               </div>
             </div> 
+          </div>
+          <Footer></Footer>
         </div>
     );
 };
