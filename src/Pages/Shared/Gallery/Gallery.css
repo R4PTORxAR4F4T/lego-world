@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 1; /* Each column will take an equal portion of the available space */
+  padding: 0 4px;
+  display: flex; /* Enable flexbox for the column container */
+  flex-direction: column; /* Stack the images vertically within the column */
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  flex-grow: 1; /* Allow the images to grow and occupy the available vertical space */
+}
+
+/* Responsive layout - makes a two-column layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex-basis: 50%; /* Each column takes 50% of the available space */
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex-basis: 100%; /* Each column takes 100% of the available space */
+  }
+}
