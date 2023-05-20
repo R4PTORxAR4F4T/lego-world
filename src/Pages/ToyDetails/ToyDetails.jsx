@@ -13,13 +13,17 @@ const ToyDetails = () => {
     
         const email = user?.email;
         const booking = { 
-            toy_id:_id,
             email:email,
+            toy_id:_id,
+            seller_email:seller_email,
             seller: seller_name, 
             toy_name:name,
+            image:image,
+            rating:rating,
             category:sub_category, 
             price: price,
             quantity: quantity, 
+            details:details
         }
 
         console.log(booking);

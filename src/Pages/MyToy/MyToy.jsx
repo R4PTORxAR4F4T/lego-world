@@ -33,10 +33,10 @@ const MyToy = () => {
             .then(data => setMybookings(data))
     }, [url]);
 
-    console.log(mybookings)
+    // console.log(mybookings)
     
     return (
-        <div className="w-4/6 mx-auto">
+        <div className="w-4/6 mx-auto my-10">
             <p className='text-4xl text-center mb-8 border-b pb-4 border-white '>My Added Toys</p>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
