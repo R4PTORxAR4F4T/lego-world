@@ -12,7 +12,6 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [loginError, setloginError] = useState();
-    console.log(loginError);
     const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
