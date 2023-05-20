@@ -3,6 +3,8 @@ import Carasol from '../Shared/Carasol/Carasol';
 import AllToy from '../AllToy/AllToy';
 import ToyCategory from '../ToyCategory/ToyCategory';
 import Gallery from '../Shared/Gallery/Gallery';
+import Comming from '../Shared/Comming/Comming';
+import About from '../Shared/About/About';
 
 
 const Home = () => {
@@ -16,6 +18,8 @@ const Home = () => {
             <Carasol></Carasol>
             <Gallery></Gallery>
             <ToyCategory></ToyCategory>
+            <Comming></Comming>
+            <About></About>
         </div>
     );
 };
