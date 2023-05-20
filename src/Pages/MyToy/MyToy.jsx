@@ -9,6 +9,7 @@ const MyToy = () => {
 
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+    const [sortOrder, setSortOrder] = useState('asc');
 
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
@@ -28,15 +29,21 @@ const MyToy = () => {
         }
     }
 
+    const toggleSortOrder = () => {
+        const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc'; // Toggle the sort order
+        setSortOrder(newSortOrder);
+      }
+
     // console.log(user?.email);
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `http://localhost:5000/bookings?email=${user?.email}&sort=${sortOrder}`;
+
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => setMyToys(data))
     }, [url]);
 
-    console.log(myToys)
+    // console.log(myToys);
     
     return (
         <div className="w-4/6 mx-auto">
@@ -44,6 +51,11 @@ const MyToy = () => {
             <div >
             <p className='text-4xl text-center mb-8 border-b pb-4 border-white '>My Added Toys</p>
                 <div className="overflow-x-auto w-full">
+                    <div className="text-end">
+                    <button className="btn btn-outline mb-4" onClick={toggleSortOrder}>
+                        {sortOrder === 'asc' ? 'Sort Descending' : 'Sort Ascending'}
+                    </button>
+                    </div>
                     <table className="table w-full">
                         {/* head */}
                         <thead>
