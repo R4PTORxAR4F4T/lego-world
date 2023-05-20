@@ -3,13 +3,16 @@ import React, { useContext,createContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from "react-icons/fa";
+import { useState } from 'react';
+
 
 const Login = () => {
 
     const { signIn, handleGoogleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    //login page location to from 
+    const [loginError, setloginError] = useState();
+    console.log(loginError);
     const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
@@ -27,7 +30,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setloginError("Invalid user and password");
             })
     }
 
@@ -39,7 +42,7 @@ const Login = () => {
             navigate(from, { replace: true })
         })
         .catch(error => {
-            console.log(error);
+            setloginError("Invalid user and password");
         })
     }
 
@@ -69,6 +72,7 @@ const Login = () => {
                     </div>
                 </div>
 
+                <p className="text-red-600" >{ loginError } </p>
             </form>
 
             <p className='text-center m-5 border-b border-gray-800 p-5'>login with thirt pary</p>

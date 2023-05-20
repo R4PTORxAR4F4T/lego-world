@@ -83,7 +83,8 @@ const Register = () => {
                     <Link  to="/login">Already have Account..?</Link>
                     </div>
                 </div>
-
+                <p className="" ></p>
+                <p className="text-red-600" >{error}</p>
             </form>
 
         </div>
