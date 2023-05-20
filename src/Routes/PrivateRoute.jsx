@@ -1,11 +1,13 @@
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Navigate } from 'react-router';
+import { Navigate,useLocation } from 'react-router';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
+
+  const location = useLocation();
 
   useEffect(() => {
     if (!user?.email) {
@@ -23,7 +25,7 @@ const PrivateRoute = ({ children }) => {
 
   return (
     <>
-      <Navigate to="/login" replace />
+      <Navigate state={{from:location}} to="/login" replace></Navigate>
     </>
   );
 };

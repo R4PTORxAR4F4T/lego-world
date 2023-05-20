@@ -2,7 +2,7 @@ import React from 'react';
 
 const Comming = () => {
     return (
-        <div className='flex justify-between items-center'>
+        <div className='flex flex-col sm:flex-row justify-between items-center gap-10'>
             <div className=''>
                 <p className='text-4xl mb-8 pb-4 '>Comming soon....</p>
                 <p className='text-xl'>Here is our new product</p>
@@ -19,7 +19,7 @@ const Comming = () => {
                     </div>
                 </div>
             </div>
-            <div className="h-96 carousel carousel-vertical rounded-box w-1/2 border "> 
+            <div className="h-96 carousel carousel-vertical rounded-box w-full sm:w-1/2 border "> 
                 <div className="carousel-item h-full">
                     <img src="https://www.lego.com/cdn/cs/set/assets/blt9085e4c9ecfaffbe/43225.png?format=webply&fit=bounds&quality=75&width=800&height=800&dpr=1" />
                 </div> 

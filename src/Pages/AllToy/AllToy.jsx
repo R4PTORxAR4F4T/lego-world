@@ -28,6 +28,7 @@ const AllToy = () => {
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Seller</th>
                         <th>Quantity</th>
                         <th>View</th>
@@ -45,11 +46,13 @@ const AllToy = () => {
                                     </div>
                                 </div>
                                 </td>
-        
+
                                 <td>
-                                {item.seller}
-                                <br/>
                                 <span className="badge badge-ghost badge-sm">{item.category}</span>
+                                </td>
+
+                                <td>
+                                {item.seller}        
                                 </td>
         
                                 <td>{item.quantity}</td>

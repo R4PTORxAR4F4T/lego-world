@@ -8,7 +8,7 @@ import Footer from "../Shared/Footer/Footer";
 const MyToy = () => {
 
     const { user } = useContext(AuthContext);
-    const [mybookings, setMybookings] = useState([]);
+    const [myToys, setMyToys] = useState([]);
 
     const handleDelete = id => {
         const proceed = confirm('Are You sure you want to delete');
@@ -20,22 +20,23 @@ const MyToy = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        const remaining = mybookings.filter(booking => booking._id !== id);
-                        setMybookings(remaining);
+                        const remaining = myToys.filter(booking => booking._id !== id);
+                        setMyToys(remaining);
                         alert('deleted successful');
                     }
                 })
         }
     }
 
+    // console.log(user?.email);
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setMybookings(data))
+            .then(data => setMyToys(data))
     }, [url]);
 
-    // console.log(mybookings)
+    console.log(myToys)
     
     return (
         <div className="w-4/6 mx-auto">
@@ -54,12 +55,12 @@ const MyToy = () => {
                         </tr>
                         </thead>
                         <tbody>
-                            {mybookings.map(item=>(
+                            {myToys.map(item=>(
                                 <tr key={item._id}>
                                     <td>
                                     <div className="flex items-center space-x-3">
                                         <div>
-                                        <div className="font-bold">{item.toy_name}</div>
+                                        <div className="font-bold">{item.name}</div>
                                         <div className="text-sm opacity-50">price : {item.price} $</div>
                                         </div>
                                     </div>
@@ -68,7 +69,7 @@ const MyToy = () => {
                                     <td>
                                     {item.quantity} pcs
                                     <br/>
-                                    <span className="badge badge-ghost badge-sm">{item.category}</span>
+                                    <span className="badge badge-ghost badge-sm">{item.sub_category}</span>
                                     </td>
             
                                     <td>

@@ -7,9 +7,7 @@ const UpdateToy = () => {
 
     const update_toy = useLoaderData();
 
-    // console.log(update_toy);
-
-    const { details, image, toy_name, price, quantity, rating, seller_email, seller, category, _id } = update_toy;
+    const { details, image, name, price, quantity, rating, seller_email, seller_name, sub_category, _id } = update_toy;
 
     const handleUpdate = (event) => {
 
@@ -53,7 +51,7 @@ const UpdateToy = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div>
                         <label className="text-lg font-semibold">Name:</label><br />
-                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="name" id="name" defaultValue={toy_name} title='readonly'  readOnly />
+                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="name" id="name" defaultValue={name} title='readonly'  readOnly />
                         </div>
 
                         <div>
@@ -78,12 +76,12 @@ const UpdateToy = () => {
 
                         <div>
                         <label className="text-lg font-semibold">Sub Category:</label><br />
-                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="subCategory" id="subCategory" defaultValue={category}  title='readonly'  readOnly />
+                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="subCategory" id="subCategory" defaultValue={sub_category}  title='readonly'  readOnly />
                         </div>
 
                         <div>
                         <label className="text-lg font-semibold">Seller Name:</label><br />
-                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="sellerName" id="sellerName" defaultValue={seller}  title='readonly'  readOnly />
+                        <input className="w-full border border-gray-500 px-4 py-2 rounded-lg" type="text" name="sellerName" id="sellerName" defaultValue={seller_name}  title='readonly'  readOnly />
                         </div>
                         
                         <div>

@@ -16,7 +16,7 @@ const Home = () => {
     // console.log(alltoys);
 
     return (
-        <div className='w-4/6 mx-auto'>
+        <div className='lg:w-4/6 mx-auto '>
             <Header></Header>
             <Carasol></Carasol>
             <Gallery></Gallery>
