@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 
 const ErrorPage = () => {
@@ -9,7 +10,7 @@ const ErrorPage = () => {
     return (
         <div className='w-4/6 mx-auto'>
             <div className="flex flex-col items-center justify-center h-screen">
-                <img src="/public/error.png" alt="Error" className=" mb-4" />
+                <img src="/error.png" alt="Error" className=" mb-4" />
                 <p className="text-lg text-center">
                     Oops! The page you're looking for doesn't exist.
                 </p>
