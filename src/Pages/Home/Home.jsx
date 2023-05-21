@@ -22,9 +22,15 @@ const Home = () => {
         <Header></Header>
         <Carasol></Carasol>
         <Gallery></Gallery>
-        <ToyCategory></ToyCategory>
-        <Comming></Comming>
-        <About></About>
+        {/* <AOS> */}
+          <ToyCategory></ToyCategory>
+        {/* </AOS> */}
+        {/* <AOS> */}
+          <Comming></Comming>
+        {/* </AOS> */}
+        {/* <AOS> */}
+          <About></About>
+        {/* </AOS>sss */}
         <Footer></Footer>
     </div>
   );
