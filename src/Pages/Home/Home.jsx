@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import AOS from 'react-aos';
 import 'aos/dist/aos.css';
 import Carasol from '../Shared/Carasol/Carasol';
-import AllToy from '../AllToy/AllToy';
 import ToyCategory from '../ToyCategory/ToyCategory';
 import Gallery from '../Shared/Gallery/Gallery';
 import Comming from '../Shared/Comming/Comming';
