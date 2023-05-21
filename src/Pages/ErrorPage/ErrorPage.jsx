@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 const ErrorPage = () => {
+
+    useTitle('Error 404');
+
     return (
         <div className='w-4/6 mx-auto'>
             <div className="flex flex-col items-center justify-center h-screen">

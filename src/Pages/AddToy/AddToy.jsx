@@ -2,6 +2,7 @@ import React from 'react';
 import Swal from 'sweetalert2'
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
 
 const handleAddToy = event =>{
     event.preventDefault();
@@ -31,7 +32,7 @@ const handleAddToy = event =>{
 
     // console.log(adding);
 
-    fetch('http://localhost:5000/alltoys', {
+    fetch('https://assignment-11-server-jet.vercel.app/alltoys', {
         method: 'POST', 
         headers: {
             'content-type': 'application/json'
@@ -50,11 +51,20 @@ const handleAddToy = event =>{
                 confirmButtonText: 'Ok'
             })
         }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
+        }
     })
 
 }
 
 const AddToy = () => {
+    useTitle('AddToy');
     return (
         <div className='w-4/6 mx-auto' >
             <Header></Header>

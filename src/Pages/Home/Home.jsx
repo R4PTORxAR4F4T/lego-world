@@ -7,11 +7,12 @@ import Comming from '../Shared/Comming/Comming';
 import About from '../Shared/About/About';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
 
 
 const Home = () => {
 
-    
+    useTitle('Home');
 
     // console.log(alltoys);
 

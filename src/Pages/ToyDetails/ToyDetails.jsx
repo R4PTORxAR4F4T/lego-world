@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router';
 import { AuthContext } from '../../providers/AuthProvider';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
 
 
 const ToyDetails = () => {
@@ -10,6 +11,7 @@ const ToyDetails = () => {
     const toy = useLoaderData();
     const { details, image, name, price, quantity, rating, seller_email, seller_name, sub_category, _id } = toy;
     const {user} = useContext(AuthContext);
+    useTitle('Details');
 
     const handleBookToy=() =>{
     
@@ -30,7 +32,7 @@ const ToyDetails = () => {
 
         console.log(booking);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://assignment-11-server-jet.vercel.app/bookings', {
             method: 'POST', 
             headers: {
                 'content-type': 'application/json'

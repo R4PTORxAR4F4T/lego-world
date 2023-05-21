@@ -1,8 +1,12 @@
 import React from 'react';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
 
 const Blogs = () => {
+
+  useTitle('Blog');
+
     return (
         <div className='w-4/6 mx-auto'>
           <Header></Header>

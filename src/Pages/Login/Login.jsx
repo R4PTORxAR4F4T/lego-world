@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 import { FaGoogle } from "react-icons/fa";
 import { useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
     const location = useLocation();
     const [loginError, setloginError] = useState();
     const from = location.state?.from?.pathname || '/'
+    useTitle('Login');
 
     const handleLogin = event => {
         event.preventDefault();

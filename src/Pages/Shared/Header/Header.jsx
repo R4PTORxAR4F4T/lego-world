@@ -18,7 +18,7 @@ const Header = () => {
 return (
     <div className="navbar bg-base-100 mb-5">
         <div className="navbar-start">
-        <a className="btn btn-ghost normal-case text-3xl"><img className='w-12' src="/public/gamepad.png" /> Lego World</a>
+        <a className="btn btn-ghost normal-case text-3xl"><img className='w-12' src="/gamepad.png" /> Lego World</a>
         </div>
 
         <div className="navbar-end">

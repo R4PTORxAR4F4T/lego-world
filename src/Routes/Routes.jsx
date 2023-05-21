@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       {
         path: 'toy/:id', 
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>, 
-        loader: ({params}) => fetch(`http://localhost:5000/alltoys/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-11-server-jet.vercel.app/alltoys/${params.id}`)
       },
       {
         path: 'update/:id', 
         element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>, 
-        loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
+        loader: ({params}) => fetch(`https://assignment-11-server-jet.vercel.app/bookings/${params.id}`)
       },
       // Error page route for any unwanted paths
       {

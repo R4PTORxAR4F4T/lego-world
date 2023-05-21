@@ -3,6 +3,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link } from 'react-router-dom';
 import Header from "../Shared/Header/Header";
 import Footer from "../Shared/Footer/Footer";
+import useTitle from "../../hooks/useTitle";
+import Swal from 'sweetalert2'
 
 
 const MyToy = () => {
@@ -10,23 +12,40 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
     const [sortOrder, setSortOrder] = useState('asc');
+    useTitle('MyToy');
 
     const handleDelete = id => {
-        const proceed = confirm('Are You sure you want to delete');
-        if (proceed) {
-            fetch(`http://localhost:5000/bookings/${id}`, {
-                method: 'DELETE'
-            })
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`https://assignment-11-server-jet.vercel.app/bookings/${id}`,{
+                    method: 'DELETE'
+                })
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         const remaining = myToys.filter(booking => booking._id !== id);
                         setMyToys(remaining);
-                        alert('deleted successful');
                     }
                 })
-        }
+
+                Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+            }
+          })
     }
 
     const toggleSortOrder = () => {
@@ -35,7 +54,7 @@ const MyToy = () => {
       }
 
     // console.log(user?.email);
-    const url = `http://localhost:5000/bookings?email=${user?.email}&sort=${sortOrder}`;
+    const url = `https://assignment-11-server-jet.vercel.app/bookings?email=${user?.email}&sort=${sortOrder}`;
 
     useEffect(() => {
         fetch(url)
@@ -48,8 +67,8 @@ const MyToy = () => {
     return (
         <div className="w-4/6 mx-auto">
             <Header></Header>
-            <div >
-            <p className='text-4xl text-center mb-8 border-b pb-4 border-white '>My Added Toys</p>
+            <div  className="my-12">
+            <p className='text-4xl text-center mb-5 border-b pb-4 border-white '>My Added Toys</p>
                 <div className="overflow-x-auto w-full">
                     <div className="text-end">
                     <button className="btn btn-outline mb-4" onClick={toggleSortOrder}>

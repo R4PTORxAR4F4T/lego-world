@@ -2,12 +2,17 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 import Header from '../Shared/Header/Header';
 import Footer from '../Shared/Footer/Footer';
+import useTitle from '../../hooks/useTitle';
+import Swal from 'sweetalert2'
+
 
 const UpdateToy = () => {
 
     const update_toy = useLoaderData();
+    useTitle('Update');
 
     const { details, image, name, price, quantity, rating, seller_email, seller_name, sub_category, _id } = update_toy;
+
 
     const handleUpdate = (event) => {
 
@@ -25,7 +30,7 @@ const UpdateToy = () => {
 
         console.log(updates);
 
-        fetch(`http://localhost:5000/bookings/${_id}`, {
+        fetch(`https://assignment-11-server-jet.vercel.app/bookings/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -35,8 +40,13 @@ const UpdateToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount > 0) {
-                    
+                if (data.acknowledged == true) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Data Update Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    })
                 }
             })
     }

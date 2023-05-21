@@ -9,10 +9,12 @@ const ToyCategory = () => {
     const [alltoys, setAlltoys] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alltoys')
+        fetch('https://assignment-11-server-jet.vercel.app/alltoys')
             .then(res => res.json())
             .then(data => setAlltoys(data));
     }, [])
+
+    console.log(alltoys);
 
     return (
         // <div className="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
